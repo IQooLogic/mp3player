@@ -22,7 +22,8 @@
     --gradient-end: #f97316;
 }
 
-html, body {
+html,
+body {
     background: transparent;
 }
 
@@ -229,6 +230,11 @@ body {
 
 .progress-knob:hover {
     transform: translateX(-50%) scale(1.2);
+}
+
+.player-panel.cover-bg-mode .album-art {
+    background: transparent;
+    box-shadow: none;
 }
 
 /* Time Display */

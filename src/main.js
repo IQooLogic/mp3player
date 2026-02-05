@@ -194,7 +194,7 @@ function updateCoverDisplay() {
     if (currentCoverUrl) {
         playerBgCover.style.backgroundImage = `url("${currentCoverUrl}")`;
         if (coverBgMode) {
-            albumArt.innerHTML = defaultAlbumArt;
+            albumArt.innerHTML = '';
         } else {
             albumArt.innerHTML = `<img src="${currentCoverUrl}" alt="Album Art">`;
         }
