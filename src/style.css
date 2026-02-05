@@ -470,11 +470,17 @@ body {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .playlist-now-playing p {
     font-size: 14px;
     color: var(--accent-purple);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* Playlist Items */
