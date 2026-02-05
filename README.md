@@ -8,15 +8,20 @@ A cross-platform MP3 player with classic Winamp aesthetics, built with Tauri + R
 
 ## Features
 
-- Classic Winamp visual style with LCD display
-- Transparent, frameless window
+- Classic Winamp visual style with modern aesthetics
+- Transparent, frameless window with custom controls
 - Play/Pause/Stop/Next/Previous controls
 - Volume control
-- Seek bar
+- Seek bar with circular progress indicator
 - Playlist support (add/remove/clear)
+- Song duration display in playlist
 - Shuffle and repeat modes
-- Animated visualizer
+- Animated waveform visualizer
+- Album art display with cover background mode
 - Keyboard shortcuts
+- Window position persistence
+- Playlist persistence between sessions
+- Text truncation for long filenames
 - Cross-platform (Windows, macOS, Linux)
 
 ## Prerequisites
@@ -150,32 +155,34 @@ Edit `src-tauri/tauri.conf.json`:
 MIT
 
 
-```
-+ close and minimize buttons do not work
-+ song seek doesn't work
-+ make playlist panel toggleable
-+ allow main window to be movable
+## TODO
 
-
-+ window move doesn't work
-+ after seeking song audio stops
-+ when toggle playlist panel shrink width
-+ remember window position on screen
-+ remember playlist between restarts
-+ playlist panel is not shown by default
-+ when playlist is toggled, toggle button should be purple not the other way around
-+ make window edges round - keep in mind to do the same when playlist panel is shown
-+ display cover image that is the same name as mp3 file and is beside mp3 file
-+ make text in playlist not selectable when double clicked the song - do the same throughout the ui where needed
-+ add option to show cover art as player background or where it is now
-- player background cover art button when on is purple and is standing out too much from design 
-+ song duration not shown in playlist
-+ when showing cover art as player background, circle inside seek bar should be transparent
+### In Progress / Needs Testing
 - when showing cover art as player background, cover art should be centered and scaled to fit in the player (test this)
-+ top of playlist where is song title and artist should be truncated to achieve same size no matter the song name/file name length
-+ change screenshot to actual app screenshot
+- player background cover art button when on is purple and is standing out too much from design
+- top of playlist buttons for toggle playlist, minimize and close overlap with song name and artist
 
-
+### Future Features
 - create a feature that will allow to paste yt video and run yt-dlp to download mp3 and covert/thumbnail
    - (./yt-dlp -x --audio-format mp3 --audio-quality 0 --write-thumbnail --convert-thumbnails png https://www.youtube.com/watch?v=96zLSjw_FBg)
+
+### Completed ✓
+- ✓ close and minimize buttons work
+- ✓ song seek works
+- ✓ playlist panel toggleable
+- ✓ window movable
+- ✓ seeking fixed
+- ✓ playlist panel width responsive
+- ✓ window position persistence
+- ✓ playlist persistence between restarts
+- ✓ playlist panel default state
+- ✓ toggle button color indicator
+- ✓ rounded window edges
+- ✓ cover image display
+- ✓ text not selectable in playlist
+- ✓ cover art as player background option
+- ✓ song duration shown in playlist
+- ✓ transparent circle when showing cover background
+- ✓ playlist header text truncation
+- ✓ screenshots updated
 ```
