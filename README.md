@@ -185,4 +185,3 @@ MIT
 - ✓ transparent circle when showing cover background
 - ✓ playlist header text truncation
 - ✓ screenshots updated
-```
