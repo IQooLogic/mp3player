@@ -2,7 +2,9 @@
 
 A cross-platform MP3 player with classic Winamp aesthetics, built with Tauri + Rust + Vanilla JS.
 
-![Winamp Style](https://d3h2k7ug3o5pb3.cloudfront.net/image/2021-02-04/4b6cdf90-66a7-11eb-8ff0-3f5d98ddd5ff.jpg)
+![Winamp No cover](screenshots/image.png)
+
+![Winamp Cover](screenshots/image_cover.png)
 
 ## Features
 
@@ -167,11 +169,13 @@ MIT
 + make text in playlist not selectable when double clicked the song - do the same throughout the ui where needed
 + add option to show cover art as player background or where it is now
 - player background cover art button when on is purple and is standing out too much from design 
-- song duration not shown in playlist
-- when showing cover art as player background, circle inside seek bar should be transparent
++ song duration not shown in playlist
++ when showing cover art as player background, circle inside seek bar should be transparent
 - when showing cover art as player background, cover art should be centered and scaled to fit in the player (test this)
++ top of playlist where is song title and artist should be truncated to achieve same size no matter the song name/file name length
++ change screenshot to actual app screenshot
 
 
 - create a feature that will allow to paste yt video and run yt-dlp to download mp3 and covert/thumbnail
-   - (./yt-dlp -x --audio-format mp3 --audio-quality 0 --write-thumbnail --convert-thumbnails png https://www.youtube.com/watch?v=8dxlviCDmYA)
+   - (./yt-dlp -x --audio-format mp3 --audio-quality 0 --write-thumbnail --convert-thumbnails png https://www.youtube.com/watch?v=96zLSjw_FBg)
 ```
