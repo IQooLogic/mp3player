@@ -380,12 +380,33 @@ async function openFile() {
 }
 
 // Add to playlist
-function addToPlaylist(path) {
+async function addToPlaylist(path) {
     const filename = path.split(/[/\\]/).pop();
     const { artist, title } = extractArtist(filename);
-    playlist.push({ path, filename, artist, title, duration: null });
+
+    // Add with null duration initially
+    const trackInfo = { path, filename, artist, title, duration: null };
+    playlist.push(trackInfo);
+
+    // Get the index of the newly added track
+    const trackIndex = playlist.length - 1;
+
+    // Initial render
     renderPlaylist();
     savePlaylist();
+
+    // Fetch metadata asynchronously
+    try {
+        const metadata = await invoke('get_track_metadata', { path });
+        if (metadata && playlist[trackIndex] && playlist[trackIndex].path === path) {
+            playlist[trackIndex].duration = metadata.duration_secs;
+            // Update UI for this track
+            renderPlaylist();
+            savePlaylist();
+        }
+    } catch (err) {
+        console.error('Failed to get track metadata:', err);
+    }
 }
 
 // Render playlist

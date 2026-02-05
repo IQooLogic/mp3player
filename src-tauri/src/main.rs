@@ -175,6 +175,27 @@ fn load_track(path: String, state: State<AppState>) -> Result<TrackInfo, String>
 }
 
 #[tauri::command]
+fn get_track_metadata(path: String) -> TrackInfo {
+    // Get duration
+    let duration = mp3_duration::from_path(&path)
+        .map(|d| d.as_secs_f64())
+        .unwrap_or(0.0);
+
+    // Extract filename
+    let filename = std::path::Path::new(&path)
+        .file_name()
+        .and_then(|n| n.to_str())
+        .unwrap_or("Unknown")
+        .to_string();
+
+    TrackInfo {
+        path,
+        filename,
+        duration_secs: duration,
+    }
+}
+
+#[tauri::command]
 fn get_cover_path(audio_path: String) -> Option<String> {
     let path = std::path::Path::new(&audio_path);
     let parent = path.parent()?;
@@ -263,6 +284,7 @@ fn main() {
         .manage(app_state)
         .invoke_handler(tauri::generate_handler![
             load_track,
+            get_track_metadata,
             play,
             pause,
             resume,
